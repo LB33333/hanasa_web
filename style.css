@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic',
+    sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.7;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.meta {
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 32px;
+}
+h2 {
+  font-size: 16px;
+  margin: 28px 0 8px;
+}
+p,
+li {
+  font-size: 14px;
+}
+ul {
+  padding-left: 20px;
+}
+a {
+  color: #2f8fe8;
+}
+footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  color: #888;
+  font-size: 13px;
+}
+nav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  font-size: 14px;
+}
+nav a {
+  margin-right: 16px;
+}
