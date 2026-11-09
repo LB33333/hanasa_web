@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>미용재료 하나사 앱 설치</title>
+    <meta name="description" content="미용재료 하나사 앱 설치 페이지. 휴대폰에 맞는 스토어로 이동합니다." />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      .install {
+        max-width: 420px;
+        margin: 0 auto;
+        padding: 56px 20px 40px;
+        text-align: center;
+      }
+      .install h1 {
+        font-size: 26px;
+        margin-bottom: 6px;
+      }
+      .install .lead {
+        color: #555;
+        font-size: 15px;
+        margin-bottom: 28px;
+      }
+      .store {
+        display: block;
+        margin: 0 0 12px;
+        padding: 15px 16px;
+        border-radius: 12px;
+        background: #2f8fe8;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .store.secondary {
+        background: #fff;
+        color: #2f8fe8;
+        border: 1.5px solid #2f8fe8;
+      }
+      .status {
+        min-height: 22px;
+        margin-bottom: 20px;
+        color: #888;
+        font-size: 13px;
+      }
+      .help {
+        margin-top: 28px;
+        padding: 16px;
+        border-radius: 12px;
+        background: #f5f5f5;
+        font-size: 13px;
+        color: #555;
+        text-align: left;
+      }
+      .help strong {
+        color: #222;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="install">
+      <h1>미용재료 하나사</h1>
+      <p class="lead">원장님 전용 재료 주문 앱</p>
+      <p class="status" id="status">휴대폰에 맞는 스토어를 고르세요.</p>
+
+      <a class="store" id="ios" href="https://apps.apple.com/kr/app/id6793431061">
+        아이폰 · App Store에서 받기
+      </a>
+      <a
+        class="store secondary"
+        id="android"
+        href="https://play.google.com/store/apps/details?id=com.hanasa.app"
+      >
+        안드로이드 · Play 스토어에서 받기
+      </a>
+
+      <div class="help">
+        <strong>설치가 안 되나요?</strong><br />
+        스토어에서 <strong>‘미용재료 하나사’</strong>를 검색해도 돼요.<br />
+        고객센터 010-5187-6881 (평일 09:00 ~ 18:00)
+      </div>
+    </main>
+    <footer>상호: 미용재료 하나사 · <a href="../">hanasa.site</a></footer>
+
+    <script>
+      // 카탈로그 QR로 들어오면 휴대폰 종류에 맞는 스토어로 바로 보낸다.
+      // 판별이 안 되는 기기(PC 등)는 위 두 버튼을 그대로 보여준다.
+      (function () {
+        var ua = navigator.userAgent || '';
+        var isIOS =
+          /iPhone|iPad|iPod/i.test(ua) ||
+          (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+        var isAndroid = /Android/i.test(ua);
+        var target = isIOS
+          ? document.getElementById('ios').href
+          : isAndroid
+            ? document.getElementById('android').href
+            : null;
+        if (target) {
+          document.getElementById('status').textContent = '스토어로 이동하고 있어요…';
+          window.location.replace(target);
+        }
+      })();
+    </script>
+  </body>
+</html>
